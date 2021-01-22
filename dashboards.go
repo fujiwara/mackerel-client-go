@@ -128,7 +128,7 @@ type Widget struct {
 	Layout   Layout `json:"layout,omitempty"`
 	Metric   Metric `json:"metric,omitempty"`
 	Graph    Graph  `json:"graph,omitempty"`
-	Range    Range  `json:"range,omitempty"`
+	Range    *Range `json:"range,omitempty"`
 	Markdown string `json:"markdown,omitempty"`
 }
 
@@ -159,15 +159,6 @@ type Range struct {
 	Offset int64  `json:"offset"`
 	Start  int64  `json:"start,omitempty"`
 	End    int64  `json:"end,omitempty"`
-}
-
-// MarshalJSON xxx
-func (r Range) MarshalJSON() ([]byte, error) {
-	if r.Type == "" {
-		return nil, nil
-	}
-	type Alias Range
-	return json.Marshal((Alias)(r))
 }
 
 // Layout information
