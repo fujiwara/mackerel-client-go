@@ -156,7 +156,7 @@ type Graph struct {
 type Range struct {
 	Type   string `json:"type,omitempty"`
 	Period int64  `json:"period,omitempty"`
-	Offset int64  `json:"offset,omitempty"`
+	Offset int64  `json:"offset"`
 	Start  int64  `json:"start,omitempty"`
 	End    int64  `json:"end,omitempty"`
 }
