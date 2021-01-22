@@ -113,8 +113,8 @@ type Dashboard struct {
 	UpdatedAt int64  `json:"updatedAt,omitempty"`
 
 	// current dashboard
-	Memo    string   `json:"memo,omitempty"`
-	Widgets []Widget `json:"widgets,omitempty"`
+	Memo    string   `json:"memo"`
+	Widgets []Widget `json:"widgets"`
 
 	// legacy dashboard
 	IsLegacy     bool   `json:"isLegacy,omitempty"`
@@ -163,8 +163,8 @@ type Range struct {
 
 // Layout information
 type Layout struct {
-	X      int64 `json:"x,omitempty"`
-	Y      int64 `json:"y,omitempty"`
+	X      int64 `json:"x"`
+	Y      int64 `json:"y"`
 	Width  int64 `json:"width,omitempty"`
 	Height int64 `json:"height,omitempty"`
 }
