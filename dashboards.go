@@ -161,6 +161,15 @@ type Range struct {
 	End    int64  `json:"end,omitempty"`
 }
 
+// MarshalJSON xxx
+func (r Range) MarshalJSON() ([]byte, error) {
+	if r.Type == "" {
+		return nil, nil
+	}
+	type Alias Range
+	return json.Marshal((Alias)(r))
+}
+
 // Layout information
 type Layout struct {
 	X      int64 `json:"x"`
